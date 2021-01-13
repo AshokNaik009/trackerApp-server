@@ -10,8 +10,7 @@ app.use(bodyParser.json());
 app.use(authRoutes);
 //To do : Remove database creds before pushing the code
 const mongoUri =
-  "mongodb+srv://121212:121212121@cluster0.i83km.mongodb.net/<dbname>?retryWrites=true&w=majority";
-
+  "mongodb+srv://12121212:1212121@cluster0.i83km.mongodb.net/trackdb?retryWrites=true&w=majority";
 mongoose.connect(mongoUri, {
   useNewUrlParser: true,
   useCreateIndex: true,
