@@ -1,17 +1,20 @@
 require("./models/User");
+require("./models/Track");
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const requireAuth = require("./middlewares/requireAuth");
 
 const authRoutes = require("./routes/authRoutes");
+const trackRoutes = require("./routes/trackRoutes");
 const app = express();
 
 app.use(bodyParser.json());
 app.use(authRoutes);
+app.use(trackRoutes);
 //To do : Remove database creds before pushing the code
 const mongoUri =
-  "mongodb+srv://11211212:121212@cluster0.i83km.mongodb.net/trackdb?retryWrites=true&w=majority";
+  "mongodb+srv://1121212:12121212@cluster0.i83km.mongodb.net/trackdb?retryWrites=true&w=majority";
 mongoose.connect(mongoUri, {
   useNewUrlParser: true,
   useCreateIndex: true,
